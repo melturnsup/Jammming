@@ -1,13 +1,13 @@
 
+import TrackList from './TrackList/TrackList.js'
 
-function SearchResults() {
+function SearchResults({ tracks }) {
     
     return (
-    <>
-        <div>
-        <h1>Search Results</h1>
-        </div>
-    </>
+      <div className="SearchResults">
+      <h2>Search Results</h2>
+      <TrackList tracks={tracks} />
+      </div>
   ); 
 }
 
