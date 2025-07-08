@@ -9,7 +9,6 @@ function TrackList({ tracks }) {
         {tracks.map(track => (
             <Track key={track.id} track={track} />
         ))}
-            <Track />
         </div>
     );
 }

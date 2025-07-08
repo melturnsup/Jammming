@@ -1,5 +1,5 @@
 
-import TrackList from './TrackList/TrackList.js'
+import TrackList from '../TrackList/TrackList.js'
 
 function SearchResults({ tracks }) {
     

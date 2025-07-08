@@ -1,8 +1,13 @@
-function Playlist() {
+
+import TrackList from '../TrackList/TrackList';
+
+function Playlist({ name, tracks }) {
 
     return (
-    <div>
-      <h1>My Spotify Playlist</h1>
+    <div className="Playlist">
+      <input defaultValue={name} />
+      <TrackList tracks={tracks} />
+      <button className="Playlist-save">SAVE TO SPOTIFY</button>
     </div>
   );
 }
