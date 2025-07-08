@@ -1,4 +1,4 @@
-import './App.css';
+
 import { useState } from 'react';
 import SearchBar from '../SearchBar/SearchBar.js';
 import SearchResults from '../SearchResults/SearchResults.js';
@@ -13,17 +13,27 @@ function App() {
   ]);
 
   const [playlistName] = useState('My Playlist');
-  const [playlistTracks] = useState([
+  const [playlistTracks, setPlaylistTracks] = useState([
     {id: 4, name: 'The Seed', artist: 'The Roots', album: 'Phrenology'},
     {id: 5, name: 'Electric Feel', artist: 'MGMT', album: 'Oracular Spectacular'}
   ]);
 
+  function addTrack(track) {
+    // check if a track already exists in playlist by its id
+    if (playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+      return; // Already added
+    }
+
+    // Add a new track
+    setPlaylistTracks(prevTracks => [...prevTracks, track]);
+  }
+
   return (
-     <div className="App">
+     <div >
         <h1>Ja<span>mmm</span>ing</h1>
       <SearchBar />
         <div className="App-playlist">
-        <SearchResults tracks={searchResults}/>
+        <SearchResults tracks={searchResults} onAdd={addTrack} />
         <Playlist name={playlistName} tracks={playlistTracks} />
         </div>
       </div>
