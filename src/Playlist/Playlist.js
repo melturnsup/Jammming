@@ -1,16 +1,19 @@
 
 import TrackList from '../TrackList/TrackList';
 
-function Playlist({ name, tracks }) {
+function Playlist({ playlistName, playlistTracks, onRemove }) {
 
  
     return (
     <div className="Playlist">
-      <input defaultValue={name} />
-      <TrackList tracks={tracks} />
+      <h2>{playlistName}</h2>
+      <TrackList
+         playlistTracks={playlistTracks}
+         onRemove={onRemove}
+       />
       <button className="Playlist-save">SAVE TO SPOTIFY</button>
     </div>
   );
 }
 
-export default Playlist;
+export default Playlist; 

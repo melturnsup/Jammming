@@ -7,9 +7,9 @@ import Playlist from '../Playlist/Playlist';
 
 function App() {
   const [searchResults, ] = useState([
-    {id:1, name: 'Outlaw', artist:'War', album:'Outlaw'},
-    {id:2, name: 'Pusherman', artist:'Curtis Mayfield', album:'Superfly'},
-    {id:3, name: 'De Novo', artist:'Clarissa Connelly', album:'Tech Duinn'}
+    {id: 1, name: 'Outlaw', artist:'War', album:'Outlaw'},
+    {id: 2, name: 'Pusherman', artist:'Curtis Mayfield', album:'Superfly'},
+    {id: 3, name: 'De Novo', artist:'Clarissa Connelly', album:'Tech Duinn'}
   ]);
 
   const [playlistName] = useState('My Playlist');
@@ -28,13 +28,23 @@ function App() {
     setPlaylistTracks(prevTracks => [...prevTracks, track]);
   }
 
+  function removeTrack(track) {
+    setPlaylistTracks(prevTracks =>
+      prevTracks.filter(savedTrack => savedTrack.id !== track.id)
+    )
+  }
+
   return (
      <div >
         <h1>Ja<span>mmm</span>ing</h1>
       <SearchBar />
         <div className="App-playlist">
         <SearchResults tracks={searchResults} onAdd={addTrack} />
-        <Playlist name={playlistName} tracks={playlistTracks} />
+        <Playlist 
+          playlistName={playlistName}
+          playlistTracks={playlistTracks} 
+          onRemove={removeTrack}
+        />
         </div>
       </div>
   );
