@@ -1,14 +1,20 @@
 
 import TrackList from '../TrackList/TrackList';
 
-function Playlist({ playlistName, playlistTracks, onRemove }) {
+function Playlist({ playlistName, onNameChange, playlistTracks, onRemove }) {
 
+  const handleChange = (e) => {
+    onNameChange(e.target.value);
+  };
  
     return (
     <div className="Playlist">
-      <h2>{playlistName}</h2>
+      <input
+        value={playlistName}
+        onChange={handleChange}
+      />
       <TrackList
-         playlistTracks={playlistTracks}
+         tracks={playlistTracks}
          onRemove={onRemove}
        />
       <button className="Playlist-save">SAVE TO SPOTIFY</button>

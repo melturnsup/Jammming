@@ -12,7 +12,7 @@ function App() {
     {id: 3, name: 'De Novo', artist:'Clarissa Connelly', album:'Tech Duinn'}
   ]);
 
-  const [playlistName] = useState('My Playlist');
+  const [playlistName, setPlaylistName] = useState('New Playlist');
   const [playlistTracks, setPlaylistTracks] = useState([
     {id: 4, name: 'The Seed', artist: 'The Roots', album: 'Phrenology'},
     {id: 5, name: 'Electric Feel', artist: 'MGMT', album: 'Oracular Spectacular'}
@@ -43,6 +43,7 @@ function App() {
         <Playlist 
           playlistName={playlistName}
           playlistTracks={playlistTracks} 
+          onNameChange={setPlaylistName}
           onRemove={removeTrack}
         />
         </div>
