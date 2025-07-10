@@ -56,7 +56,7 @@ function App() {
   return (
      <div >
         <h1>Ja<span>mmm</span>ing</h1>
-      <SearchBar onSearch={search}/>
+        <SearchBar onSearch={search}/>
         <div className="App-playlist">
         <SearchResults tracks={searchResults} onAdd={addTrack} />
         <Playlist 

@@ -1,7 +1,7 @@
 
 // lets you log in users and get a token without needing backend
-const clientId = '900167c3795643499bab1f506bb306f2';
-const redirectUri = 'http://192.168.1.51:3000/';
+const clientId = '196f780a515842a2b15fc221d75739b6';
+const redirectUri = 'http://192.168.1.51:3000';
 
 let accessToken;
 

@@ -8,6 +8,7 @@ function SearchBar({ onSearch }) {
     };
 
     const search = () => {
+        console.log("Search button clicked, term:", term); //test
         onSearch(term); // calls the function passed from App
     };
 
